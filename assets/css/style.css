@@ -80,8 +80,8 @@
 }
 .section-comp.generic p {
   font-size: min(1.5rem, 18px);
-  font-weight: 900;
-  line-height: 2.0625;
+  font-weight: 300;
+  line-height: calc(38 / 18);
   margin-bottom: 1.5em;
 }
 .section-comp.generic p:last-child {
