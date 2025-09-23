@@ -28,13 +28,10 @@
   <div class="l-loader"></div>
 
   <header id="header" class="l-header">
-    <?php if ( is_home() || is_front_page() ) : ?>
-    <h1 class="l-header__logo"><a href="<?php echo home_url(); ?>"><img src="/assets/img/logo_h.png" width="55" height="55" alt="KANAZAWA COLLEGE ART" /></a></h1>
-    <?php else : ?>
-    <p class="l-header__logo"><a href="<?php echo home_url(); ?>"><img src="/assets/img/logo_h.png" width="55" height="55" alt="KANAZAWA COLLEGE ART" /></a></p>
-    <?php endif; ?>
 
-    <nav class="l-hnav">
+    <div class="l-hnav-lang-Wrap">
+      <nav class="l-hnav">
+
       <?php if ($locale == 'ja'): ?>
 
       <?php if( have_rows('header_nav_repeat01', 'option') ): ?>
@@ -67,7 +64,7 @@
         <?php endwhile; ?>
       </ul>
       <?php endif; ?>
-
+      
       <?php else: ?>
 
       <?php if( have_rows('header_nav_repeat01_en', 'option') ): ?>
@@ -100,14 +97,39 @@
         <?php endwhile; ?>
       </ul>
       <?php endif; ?>
+      
+      <?php endif; ?><!-- check $locale -->
+      </nav>
 
-      <?php endif; ?>
-    </nav>
-    <div class="l-header__sns">
+      <?php /*
+      <div class="l-header__lang">
+        <ul class="bogo-language-switcher">
+          <?php if ($_SERVER['SERVER_NAME'] === 'localhost') {
+            $link = 'http://localhost:3000';
+          } elseif ($_SERVER['SERVER_NAME'] === 'biban.testsite.help') {
+            $link = 'https://biban.testsite.help';
+          } else {
+            $link = $_SERVER['HTTP_HOST'];
+          } ?>
+          <?php if ($locale == 'ja'): ?>
+          <li class="ja current"><a rel="alternate" hreflang="ja" href="<?php echo home_url(); ?>" title="JA" class="current" aria-current="page">JA</a></li>
+          <li class="en"><a rel="alternate" hreflang="en-US" href="<?php echo home_url(); ?>/en/" title="EN">EN</a></li>
+          <?php else: ?>
+          <li class="ja"><a rel="alternate" hreflang="ja" href="<?php echo $link; ?>" title="JA">JA</a></li>
+          <li class="en current"><a rel="alternate" hreflang="en-US" href="<?php echo home_url(); ?>" title="EN" class="current" aria-current="page">EN</a></li>
+          <?php endif; ?>
+        </ul>
+        <?php //echo do_shortcode('[bogo]'); ?>
+      </div>
+      */ ?>
+
+    </div><!-- /.l-hnav-lang-Wrap -->
+
+    <!-- <div class="l-header__sns">
       <a href="<?php echo $url_instagram; ?>" target="_blank" rel="noopener noreferrer" class="instagram"></a>
       <a href="<?php echo $url_x; ?>" target="_blank" rel="noopener noreferrer" class="x"></a>
       <a href="<?php echo $url_facebook; ?>" target="_blank" rel="noopener noreferrer" class="facebook"></a>
-    </div>
+    </div> -->
 
     <div class="l-header__gnav">
       <div class="l-header__gnav-inner">
@@ -125,7 +147,7 @@
               ?>
               <div class="l-gnav__nav-unit">
                 <?php if( have_rows('header_nav_repeat02', 'option') ): ?>
-                <p class="l-gnav__nav-ttl ac-heading"><a href="<?php echo esc_url( $linkUrl ); ?>" <?php if( $linkTarget ): ?>target="<?php echo esc_attr( $linkTarget ); ?>" rel="noopener noreferrer" <?php endif; ?>><?php echo esc_html( $linkTitle ); ?></a><i class="btn-plus"></i></p>
+                <p class="l-gnav__nav-ttl ac-heading"><a href="<?php echo esc_url( $linkUrl ); ?>" <?php if( $linkTarget ): ?>target="<?php echo esc_attr( $linkTarget ); ?>" rel="noopener noreferrer" <?php endif; ?>><?php echo esc_html( $linkTitle ); ?></a><span class="btn-plus"></span></p>
                 <ul class="l-gnav__nav-list ac-cont">
                   <?php while ( have_rows('header_nav_repeat02', 'option') ) : the_row();
                   the_row();
@@ -189,7 +211,8 @@
         </nav>
       </div>
     </div>
-
+    
+    <?php /*
     <div class="l-header__lang">
       <ul class="bogo-language-switcher">
         <?php if ($_SERVER['SERVER_NAME'] === 'localhost') {
@@ -209,6 +232,8 @@
       </ul>
       <?php //echo do_shortcode('[bogo]'); ?>
     </div>
+    */ ?>
+
     <button class="l-header__menu">
       <span></span>
     </button>
