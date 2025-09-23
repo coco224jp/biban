@@ -6,13 +6,11 @@
   padding: 0 1.75rem;
 }
 .front-masonry__head {
-  grid-gap: 1.5rem 0;
   display: grid;
-  gap: 1.5rem 0;
   padding: 5rem 0;
   position: relative;
 }
-.front-masonry__ttl {
+/* .front-masonry__ttl {
   animation: shine 5s linear 0s 1 both;
   animation: shine 3s 1 var(--transition) 0s both;
   -webkit-background-clip: text;
@@ -36,7 +34,14 @@
   left: -0.05em;
   line-height: 0.9;
   position: relative;
-  white-space: nowrap;
+  white-space: nowrap; 
+} */
+.front-masonry__ttl {
+  position: relative;
+  max-width: min(20rem, 250px);
+}
+.front-masonry__txt {
+  max-width: min(30rem, 100%);
 }
 .front-masonry__txt--ja {
   display: block;
@@ -246,9 +251,18 @@
   }
   .front-masonry__head {
     padding: 8.5rem 0;
+    display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "ttl ... txt";
+        align-items: center;
   }
   .front-masonry__ttl {
-    font-size: max(21rem, 120px);
+    max-width: calc(501 / 1920 * 100vw);
+    grid-area: ttl;
+  }
+  .front-masonry__txt {
+    max-width: calc(611 / 1920 * 100vw);
+    grid-area: txt;
   }
   .front-masonry__txt--ja {
     font-size: max(3rem, 22px);
@@ -369,9 +383,6 @@
   }
   .front-masonry__head {
     padding: 12rem 0;
-  }
-  .front-masonry__ttl {
-    font-size: max(30rem, 210px);
   }
   .front-masonry__txt--ja {
     font-size: max(3.8rem, 30px);

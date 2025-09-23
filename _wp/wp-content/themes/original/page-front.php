@@ -12,12 +12,15 @@ $locale = get_locale();
   <div id="mv" class="front-masonry">
     <div class="front-masonry__container">
       <div class="front-masonry__head">
-        <p class="front-masonry__ttl">BIBAN</p>
+        <h1 class="front-masonry__ttl"><img src="/assets/img/front-ttl.jpg" alt="" width="1002" height="606" alt="美板"></h1>
         <p class="front-masonry__txt">
-          <?php if ($locale == 'ja'): ?>
+          <img src="/assets/img/front-ttl-sub.jpg" alt="" width="1222" height="378" alt="魅力ある看板から考える、金沢の景観">
+          <?php /*
+          if ($locale == 'ja'): 
           <span class="front-masonry__txt--ja">金沢看板をアートの視点からみる</span>
           <?php endif; ?>
           <span class="front-masonry__txt--en">Cityscape Planning Section, Kanazawa</span>
+          */ ?>
         </p>
       </div>
       <?php
