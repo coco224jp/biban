@@ -241,6 +241,14 @@ function add_stylesheet() {
             '1.0',
             false // headタグ内に出力
         );
+    } elseif ( is_page('about') ) {
+        wp_enqueue_style(
+            'map',
+            $link.'/assets/css/about.css',
+            array(),
+            '1.0',
+            false // headタグ内に出力
+        );
     } elseif ( is_singular( 'pickup' ) ) {
         wp_enqueue_style(
             'pickup',
