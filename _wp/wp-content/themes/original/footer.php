@@ -1,8 +1,10 @@
 <?php $locale = get_locale(); ?>
 <footer class="l-footer">
+  <?php if(!is_front_page()): ?>
   <div class="l-footer__pagetop">
     <a href="#main" class="pagetop-link"><span></span></a>
   </div>
+  <?php endif; ?>
   <div class="l-footer__container">
     <div class="l-footer__inner">
     <!-- <p class="l-footer__logo"><img src="/assets/img/logo-footer.png" width="930" height="248" alt="美板 魅力ある看板から考える 金沢の景観" /></p> -->
