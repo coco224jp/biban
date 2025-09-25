@@ -76,11 +76,9 @@ $locale = get_locale();
       <?php wp_reset_query(); ?>
     </div>
   </div>
-
   <?php if (isset($_GET['preview'])) : ?>
-  
+
   <div id="contents">
-    
     <section id="pickup-list" class="front-pickup">
       <div class="front-pickup__ttl">
         <h2 class="front-pickup__ttl--en">Pickup</h2>
