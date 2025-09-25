@@ -47,10 +47,10 @@
 .map-detail-head__time {
   font-size: 0;
   align-self: flex-end;
-}
-.map-detail-head__time {
   font-size: 18px;
   line-height: 1.3;
+  font-weight: 300;
+  color: #333;
 }
 .map-detail-head__txt {
   font-size: min(1.5rem, 18px);
@@ -68,6 +68,8 @@
 .map-detail-mv__img {
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 900 / 640;
 }
 .map-detail-mv__img img {
   height: 100%;
@@ -200,7 +202,7 @@
   font-size: min(1.6rem, 16px);
 }
 .section-comp.generic .map-detail-cont__info-item .item-di {
-  align-items: start;
+  align-items: center;
   display: grid;
   grid-template-columns: max-content auto;
   line-height: 2.375;
@@ -213,6 +215,9 @@
   display: inline-block;
   font-size: 16px;
   margin: 0 0.25em;
+}
+.section-comp.generic .map-detail-cont__info-item .item-di > dd {
+  font-weight: 300;
 }
 .section-comp.generic .map-detail-cont__info-item .item-btn {
   line-height: 2.375;
@@ -234,9 +239,6 @@
   background-color: #666;
   mask: url("../img/icon_window.svg") no-repeat center center / cover;
   transition: background-color 0.3s cubic-bezier(0.23, 0.68, 0.32, 1);
-}
-.section-comp.generic .map-detail-cont__info-item .item-btn__link:hover::after{
-  background-color: #000;
 }
 .section-comp.generic .map-detail-cont__share {
   border-top: 1px solid #474747;
@@ -265,7 +267,7 @@
   position: relative;
 }
 .section-comp.generic .map-detail-cont__share-block > button .icon {
-  background-color: currentcolor;
+  background-color: #666;
   cursor: pointer;
   display: block;
   -webkit-mask-position: center center;
@@ -333,8 +335,11 @@
   text-align: center;
 }
 @media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .section-comp.generic .map-detail-cont__info-item .item-btn__link:hover::after{
+    background-color: #000;
+  }
   .section-comp.generic .map-detail-cont__share-block > button:hover .icon {
-    opacity: 0.4;
+    background-color: #000;
   }
 }
 @media screen and (min-width: 768px) {
@@ -454,6 +459,7 @@
   }
   .map-detail-head__area-name {
     font-size: max(1.8rem, 17px);
+    padding-top: 2rem;
   }
   .map-detail-head__time > span {
     -ms-grid-column: 1;
@@ -500,17 +506,18 @@
     font-size: max(2.4rem, 21px);
   }
   .section-comp.generic .map-detail-cont__share {
-    /* display: grid;
+    display: grid;
     grid-template-columns: max-content 1fr auto;
-    grid-template-areas: "ttl ... sns"; */
-    padding-block: 23px;
+    grid-template-areas: "ttl ... sns";
+    padding-block: 1.1rem 2.3rem;
   }
   .section-comp.generic .map-detail-cont__share-ttl {
     grid-area: ttl;
-
+    margin-bottom: 0;
   }
   .map-detail-cont__share-block{
     grid-area: sns;
+    padding-top: 1.4rem;
   }
   .section-comp.generic .map-detail-cont__btn-wrap {
     margin-top: max(8rem, 60px);
