@@ -12,7 +12,10 @@ $locale = get_locale();
     <div class="c-main-column">
         <div class="c-main-column__left">
             <a class="c-main-column__left-logo" href="<?php echo home_url('/'); ?>">
-                <img src="/assets/img/logo-subpage.jpg" alt="" width="428" height="1376">
+                <picture>
+                    <source srcset="/assets/img/subpage-mv-logo_pc.svg" media="(min-width: 1024px)">
+                    <img src="/assets/img/subpage-mv-logo_sp.svg" alt="美板" width="181" height="50">
+                </picture>
             </a>
         </div>
         <div class="c-main-column__right">
