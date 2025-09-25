@@ -12,9 +12,9 @@ $locale = get_locale();
   <div id="mv" class="front-masonry">
     <div class="front-masonry__container">
       <div class="front-masonry__head">
-        <h1 class="front-masonry__ttl"><img src="/assets/img/front-ttl.jpg" alt="" width="1002" height="606" alt="美板"></h1>
+        <h1 class="front-masonry__ttl"><img src="/assets/img/front-ttl.svg" alt="" width="404" height="242" alt="美板"></h1>
         <p class="front-masonry__txt">
-          <img src="/assets/img/front-ttl-sub.jpg" alt="" width="1222" height="378" alt="魅力ある看板から考える、金沢の景観">
+          <img src="/assets/img/front-ttl-sub.svg" alt="" width="499" height="61" alt="魅力ある看板から考える、金沢の景観">
           <?php /*
           if ($locale == 'ja'): 
           <span class="front-masonry__txt--ja">金沢看板をアートの視点からみる</span>
@@ -77,10 +77,13 @@ $locale = get_locale();
     </div>
   </div>
 
+  <?php if (isset($_GET['preview'])) : ?>
+  
   <div id="contents">
+    
     <section id="pickup-list" class="front-pickup">
       <div class="front-pickup__ttl">
-        <h2 class="front-pickup__ttl--en">PICKUP</h2>
+        <h2 class="front-pickup__ttl--en">Pickup</h2>
         <?php if ($locale == 'ja'): ?>
         <p class="front-pickup__ttl--ja">特集記事</p>
         <?php endif; ?>
@@ -123,7 +126,7 @@ $locale = get_locale();
           </a>
         </li>
         <?php endwhile; ?>
-        <?php /*
+         
         <li class="front-pickup__item">
           <a href="#">
             <div class="item-img"><img loading="lazy" src="https://placehold.jp/518x650.png" width="518" height="650"
@@ -140,7 +143,6 @@ $locale = get_locale();
             </div>
           </a>
         </li>
-        */ ?>
       </ul>
       <?php else: ?>
       <p style="margin-block: 5rem; text-align: center;">現在新しい記事はありません</p>
@@ -151,7 +153,7 @@ $locale = get_locale();
     <section class="front-recently">
       <div class="front-recently__intro">
         <div class="front-recently__ttl">
-          <h2 class="front-recently__ttl--en">RECENTLY</h2>
+          <h2 class="front-recently__ttl--en">Recently</h2>
           <?php if ($locale == 'ja'): ?>
           <p class="front-recently__ttl--ja">新着看板</p>
           <?php endif; ?>
@@ -217,6 +219,8 @@ $locale = get_locale();
 
     <?php get_template_part('include/aside'); ?>
   </div>
+  <?php else: ?>
+  <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>

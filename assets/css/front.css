@@ -102,16 +102,14 @@
   padding: 1.4rem 1.75rem;
 }
 .front-pickup__ttl--en {
-  font-family: aktiv-grotesk, source-han-sans-japanese, -apple-system,
-    blinkmacsystemfont, Segoe UI, Helvetica Neue, helveticaneue, verdana, meiryo,
-    sans-serif;
-  font-size: min(3.8rem, 70px);
-  font-weight: 700;
-  line-height: 0.9;
+  font-family: var(--font-serif-jp);
+  font-size: min(2.8rem, 42px);
+  line-height: 1.1;
 }
 .front-pickup__ttl--ja {
+  font-family: var(--font-serif-jp);
   font-size: min(1.4rem, 19px);
-  font-weight: 700;
+  line-height: 1.1;
 }
 .front-pickup__list {
   position: relative;
@@ -161,23 +159,21 @@
   padding: 1.4rem 1.75rem;
 }
 .front-recently__ttl--en {
-  font-family: aktiv-grotesk, source-han-sans-japanese, -apple-system,
-    blinkmacsystemfont, Segoe UI, Helvetica Neue, helveticaneue, verdana, meiryo,
-    sans-serif;
-  font-size: min(3.8rem, 70px);
-  font-weight: 700;
-  line-height: 0.9;
+  font-family: var(--font-serif-jp);
+  font-size: min(2.8rem, 42px);
+  line-height: 1.1;
 }
 .front-recently__ttl--ja {
   font-size: min(1.4rem, 19px);
-  font-weight: 700;
+  font-family: var(--font-serif-jp);
+  line-height: 1.1;
 }
 .front-recently__desc {
   padding: 3rem 1.75rem 0;
 }
 .front-recently__txt {
   font-size: min(1.5rem, 18px);
-  font-weight: 900;
+  font-weight: 500;
   line-height: 2.0625;
 }
 .front-recently__btnWrap {
@@ -206,6 +202,7 @@
   width: 100%;
 }
 .front-recently__item .item-ttl {
+  font-family: var(--font-serif-jp);
   font-size: min(1.6rem, 23px);
   font-weight: 700;
   line-height: 1.35;
@@ -239,7 +236,7 @@
     transform: scale(1.06);
   }
   .front-recently__item > a:hover .c-btn01__txt {
-    background: #e4ff3c;
+    color: #000;
   }
 }
 @media screen and (min-width: 768px) {
@@ -252,16 +249,20 @@
   .front-masonry__head {
     padding: 8.5rem 0;
     display: grid;
+        /* grid-template-columns: max(calc(501 / 1920 * 100vw), 200px) 1fr max(calc(611 / 1920 * 100vw), 300px); */
         grid-template-columns: auto 1fr auto;
         grid-template-areas: "ttl ... txt";
         align-items: center;
   }
   .front-masonry__ttl {
-    max-width: calc(501 / 1920 * 100vw);
+    width: max(calc(501 / 1920 * 100vw), 200px);
+    max-width: 287px;
     grid-area: ttl;
   }
   .front-masonry__txt {
-    max-width: calc(611 / 1920 * 100vw);
+    width: max(calc(611 / 1920 * 100vw), 300px);
+    max-width: 403px;
+
     grid-area: txt;
   }
   .front-masonry__txt--ja {
@@ -285,8 +286,8 @@
     padding: 2.5rem 2.675rem;
   }
   .front-pickup__ttl--en {
-    font-size: max(7rem, 38px);
-  }
+    font-size: max(4.2rem, 28px);
+    }
   .front-pickup__ttl--ja {
     font-size: max(1.9rem, 14px);
   }
@@ -344,7 +345,7 @@
     padding: 2.5rem 2.675rem;
   }
   .front-recently__ttl--en {
-    font-size: max(7rem, 38px);
+    font-size: max(4.2rem, 28px);
   }
   .front-recently__ttl--ja {
     font-size: max(1.9rem, 14px);
@@ -378,8 +379,12 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  main {
+    width: min(120rem, 100%);
+    margin-inline: auto;
+  }
   .front-masonry__container {
-    padding: 0 3.6rem;
+    padding: 0;
   }
   .front-masonry__head {
     padding: 12rem 0;
@@ -392,12 +397,14 @@
   }
   .front-pickup__ttl {
     padding: 3.6rem;
+    display: block;
   }
   .front-pickup__ttl--en {
-    font-size: max(8.2rem, 70px);
+    font-size: max(5.6rem, 42px);
   }
   .front-pickup__ttl--ja {
     font-size: max(2.4rem, 19px);
+    margin-top: max(2rem, 20px);
   }
   .front-pickup__list {
     padding: 0 3.8rem;
@@ -416,17 +423,16 @@
   .front-recently__ttl {
     display: block;
     padding: 0;
-  }
-  .front-recently__ttl--en {
-    font-size: max(8.2rem, 70px);
     padding: 3.6rem;
   }
+  .front-recently__ttl--en {
+    font-size: max(5.6rem, 42px);
+  }
   .front-recently__ttl--en:not(:last-child) {
-    border-bottom: 1px solid #474747;
   }
   .front-recently__ttl--ja {
     font-size: max(2.4rem, 19px);
-    padding: 1.8rem 3.6rem;
+    margin-top: max(2rem, 20px);
   }
   .front-recently__desc {
     padding: 3.2rem 3.6rem 0;
@@ -447,9 +453,14 @@
     justify-content: space-between;
   }
 }
-@media screen and (min-width: 1441px) {
+@media screen and (min-width: 1361px) {
+  .gutter-sizer {
+		width: 12px;
+	}
+
   .front-masonry .grid-sizer,
   .front-masonry .masonry-item {
-    width: 23.4375vw;
+    /* width: 23.4375vw; */
+    width: calc(1200px - (12px * 2) / 3);
   }
 }
