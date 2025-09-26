@@ -395,6 +395,14 @@
   .front-masonry__txt--en {
     font-size: max(1.6rem, 14px);
   }
+  .front-masonry .grid-sizer,
+  .front-masonry .masonry-item {
+    margin-bottom: calc(12 / 1360 * 100vw);
+    width: calc(291 / 1360 * 100vw);
+  }
+  .front-masonry .gutter-sizer {
+    width: calc(12 / 1360 * 100vw);
+  }
   .front-pickup__ttl {
     padding: 3.6rem;
     display: block;
@@ -454,13 +462,14 @@
   }
 }
 @media screen and (min-width: 1361px) {
-  .gutter-sizer {
-		width: 12px;
-	}
-
   .front-masonry .grid-sizer,
   .front-masonry .masonry-item {
+    margin-bottom: 12px;
     /* width: 23.4375vw; */
-    width: calc(1200px - (12px * 2) / 3);
+    /* width: calc(1200px - (12px * 3) / 4); */
+    width: 291px;
   }
+  .front-masonry .gutter-sizer {
+		width: 12px;
+	}
 }
